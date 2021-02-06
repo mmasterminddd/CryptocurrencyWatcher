@@ -1,0 +1,25 @@
+{
+  "name": "cryptowatcher",
+  "version": "1.0.0",
+  "description": "make sure 'short_open_tag=On' is set at php.ini",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mmasterminddd/CryptocurrencyWatcher.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mmasterminddd/CryptocurrencyWatcher/issues"
+  },
+  "homepage": "https://github.com/mmasterminddd/CryptocurrencyWatcher#readme",
+  "devDependencies": {
+    "gulp-header": "^2.0.9"
+  },
+  "dependencies": {
+    "fomantic-ui": "^2.8.7"
+  }
+}

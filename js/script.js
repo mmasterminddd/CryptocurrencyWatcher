@@ -1,4 +1,5 @@
-$(document).ready(function () {
+$(function() {
+    
     $('.ui.dropdown').dropdown();
 
     $('#tableSearch').on('change input', function (e) {
@@ -12,25 +13,45 @@ $(document).ready(function () {
         })
     })
 
-    $('#signInButton').click(function (e) {
+    $('#signInButton').on('click',function (e) {
         e.preventDefault();
-        window.location.href = "login.php";
+        window.location.href = serverName+'login.php';
     });
 
-    $('#signUpButton').click(function (e) {
+    $('#signUpButton').on('click',function (e) {
         e.preventDefault();
-        window.location.href = "register.php";
+        window.location.href = serverName+'register.php';
     });
 
-    $('#homeButton').click(function (e) {
+    $('#homeButton').on('click',function (e) {
         e.preventDefault();
-        window.location.href = "index.php";
+        window.location.href = serverName+'index.php';
     });
 
-    $('#portfolioButton').click(function (e) {
+    $('#logoutButton').on('click',function (e) {
         e.preventDefault();
-        window.location.href = "portfolio.php";
+        window.location.href = serverName+'logout.php';
     });
+
+
+    $('#portfolioButton').on('click',function (e) {
+        e.preventDefault();
+        window.location.href = serverName+'portfolio.php';
+    });
+
+    $('#myAccountButton').on('click',function (e) {
+        e.preventDefault();
+        window.location.href = serverName+'myaccount.php';
+    });
+
+    $('#adminButton').on('click',function (e) {
+        e.preventDefault();
+        window.location.href = serverName+'admin.php';
+    });
+
+
+    
+
 
     $('.ui.form')
         .form({
@@ -84,6 +105,10 @@ $(document).ready(function () {
                             prompt: 'Your password must be at least 6 characters'
                         },
                         {
+                            type: 'maxLength[72]',
+                            prompt: 'Your password must be max 72 characters'
+                        },
+                        {
                             type: 'match[password]',
                             prompt: 'Passwords does not match.'
                         }
@@ -91,5 +116,7 @@ $(document).ready(function () {
                 }
             }
         });
+
+    
 
 });
