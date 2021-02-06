@@ -3,7 +3,7 @@ include 'includes/dbc.inc.php';
 $url = 'https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest';
 $parameters = [
     'start' => '1',
-    'limit' => '5000',
+    'limit' => '100',
     'convert' => 'BTC',
 ];
 
@@ -32,12 +32,12 @@ foreach ($jsonData['data'] as $coin) {
     $sql = 'INSERT INTO coins (id, name, symbol, btc_price, rank, circulating_supply, percent_change_1h , percent_change_24h, percent_change_7d ,market_cap ,volume_24h) VALUES (?, ?, ?, ? ,?, ?, ?, ?, ?, ?, ?)';
     $stmt = $conn->stmt_init();
 
-    if ((($coin['quote']['BTC']['market_cap'] * 37500) < 25000000) && (($coin['quote']['BTC']['market_cap'] * 34000) > 1000000)){
-        if (in_array($coin['symbol'], $binance_coins)){
-            echo $coin['symbol'] . ' ';
-        }
+    // if ((($coin['quote']['BTC']['market_cap'] * 37500) < 25000000) && (($coin['quote']['BTC']['market_cap'] * 34000) > 1000000)){
+    //     if (in_array($coin['symbol'], $binance_coins)){
+    //         echo $coin['symbol'] . ' ';
+    //     }
             
-    }
+    // }
 
     if (!$stmt->prepare($sql)) {
         return http_response_code(500);
